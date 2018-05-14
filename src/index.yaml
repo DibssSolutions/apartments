@@ -1,0 +1,5 @@
+ProjectTitle: apartments
+
+PageList:
+- file: page.html
+  ready: 50
