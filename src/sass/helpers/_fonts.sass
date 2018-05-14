@@ -1,0 +1,23 @@
+//FONTS
+=fontpath($name, $name1, $file)
+	src: local($name), local($name1), url("../fonts/" + $file + ".woff2") format("woff2"), url("../fonts/" + $file + ".woff") format("woff")
+=fontdefault($style, $weight, $name: 'FuturaFuturis')
+	font-family: $name
+	font-style: $style
+	font-weight: $weight
+
+//book
+@font-face
+	+fontdefault(normal, 400, 'FuturaBookC')
+	+fontpath('FuturaBookC Regular', 'FuturaBookC-Regular', FuturaBookC)
+
+//futuris
+@font-face
+	+fontdefault(normal, 300)
+	+fontpath('FuturaFuturis Light', 'FuturaFuturis-Light', FuturaFuturis-Light)
+@font-face
+	+fontdefault(normal, 500)
+	+fontpath('FuturaFuturis Medium', 'FuturaFuturis-Medium', FuturaFuturis-Medium)
+@font-face
+	+fontdefault(italic, 500)
+	+fontpath('FuturaFuturis MediumItalic', 'FuturaFuturis-MediumItalic', FuturaFuturis-MediumItalic)

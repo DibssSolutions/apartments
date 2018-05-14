@@ -1,0 +1,17 @@
+.btn
+	display: inline-block
+	vertical-align: top
+	padding: 15px 20px
+	border-radius: 5px
+	color: $white
+	background: $green
+	font-family: $futura
+	+f(16px, 500, 1.25)
+	transition: background 0.3s
+	&_green
+		+hover
+			background: $lightGreen
+		+active
+			background: $darkGreen
+	&_wide
+		width: 100%

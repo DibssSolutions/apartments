@@ -15,7 +15,10 @@
 
     <!-- BEGIN content -->
     <div class="out">
-      {% block content %}{% endblock %}
+      {% include 'partials/components/_header.html' %}
+      <div class="main">
+        {% block content %}{% endblock %}
+      </div>
     </div>
     <!-- END content -->
 

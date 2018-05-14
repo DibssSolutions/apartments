@@ -5,23 +5,10 @@ title: Index page
 
 {% block content %}
 	
-	{# variable example #}
-	<h1>{{title}}</h1>
-
-	
-	{# partial example #}
-	{% include "partials/_header.html" %}
-
-	{# mixin example #}
-	{{mixins.icon('facebook')}}
-
-
-	{# data usage example #}
-		{% import "data/data.html" as tests %}
-		
-		{% for test in tests.list %}
-		<li>{{test.title}}</li>
-		{% endfor %}
-	{# end of example #}
+	<div class="cover" style="background-image: url(img/cover.jpg)">
+		<div class="cover__content">
+			<p>Посуточная аренда лучших аппартаментов в Москва-Сити по версии International Property Awards </p>
+		</div>
+	</div>
 
 {% endblock %}

@@ -1,0 +1,201 @@
+.header
+	float: left
+	overflow: auto
+	width: 274px
+	height: 100vh
+	color: $white
+	background: $dark
+	box-shadow: 0 22px 31px 0 rgba($black,0.35)
+	font-family: $book
+	font-weight: 400
+	text-align: center
+	+md 
+		float: none
+		overflow: visible
+		width: auto
+		height: auto
+		min-height: 100px
+	+sm 
+		min-height: 50px
+		box-shadow: 0 11px 16px 0 rgba($black,0.35)
+	&__body 
+		+md 
+			display: none
+	&__order
+		padding: 40px 47px
+		border-top: 1px solid rgba($white, 0.2)
+	&__contacts
+		padding-bottom: 20px
+		+f(16px, null, 1)
+		li 
+			&:not(:last-child)
+				margin-bottom: 10px
+		a 
+			display: block
+			color: inherit
+			transition: color 0.3s
+			+hover 
+				color: $blue
+	&__address
+		padding: 0 30px 30px
+		+f(16px, null, 1.375)
+	&__copyright
+		padding: 0 25px 30px
+		color: #9393A5
+		+f(14px, null, 1.286)
+
+.btn-nav
+	position: absolute
+	top: 0
+	left: 0
+	display: none
+	width: 84px
+	height: 100px
+	background: none
+	+md 
+		display: block
+	+sm 
+		width: 42px
+		height: 50px
+	+hover
+		&:before
+			transform: translate3d(4px,0,0) rotate(45deg)
+			+sm 
+				transform: translate3d(2px,0,0) rotate(45deg)
+		&:after
+			transform: translate3d(4px,0,0) rotate(-45deg)
+			+sm 
+				transform: translate3d(2px,0,0) rotate(-45deg)
+		.btn-nav__inner
+			opacity: 0
+			transform: scaleX(0)
+	&:before,
+	&:after,
+	&__inner
+		position: absolute
+		left: 50%
+		margin-left: -12px
+		border-radius: 2.5px
+		width: 24px
+		height: 2px
+		background: $white
+		+sm 
+			margin-left: -6px
+			border-radius: 1px
+			width: 12px
+			height: 1px
+	&:before,
+	&:after
+		content: ''
+		transition: transform 0.3s
+	&:before
+		top: 39px
+		transform-origin: left top
+		+sm 
+			top: 19px
+	&:after
+		top: 55px
+		transform-origin: left bottom
+		+sm 
+			top: 27px
+	&__inner
+		top: 47px
+		transition: opacity 0.3s, transform 0.3s
+		+sm 
+			top: 23px
+
+.logo 
+	display: block
+	padding: 31px 62px
+	+md 
+		padding: 26px 40px
+		margin: 0 auto
+		max-width: 200px
+	+sm 
+		padding: 13px 20px
+		max-width: 100px
+	img 
+		display: block
+		width: 100%
+
+.lang
+	border-top: 1px solid rgba($white, 0.2)
+	border-bottom: 1px solid rgba($white, 0.2)
+	+md 
+		position: absolute
+		top: 0
+		right: 25px
+		border: none
+	+sm 
+		right: 12px
+	&__item
+		display: inline-block
+		vertical-align: top
+		padding: 12px 5px
+		color: inherit
+		opacity: 0.44
+		+f(16px, null, 1)
+		text-transform: uppercase
+		transition: opacity 0.3s
+		+md 
+			padding: 38px 5px 36px
+			+f(26px)
+		+sm 
+			padding: 19px 3px 18px
+			+f(13px)
+		&.is-active
+			opacity: 1
+
+.nav
+	padding: 20px 0
+	+md 
+		padding: 14px 0 20px
+	&__link
+		position: relative
+		display: block
+		padding: 20px
+		color: $white
+		opacity: 0.44
+		+f(16px, null, 1)
+		transition: opacity 0.3s
+		+md 
+			padding: 30px
+			+f(30px)
+		+hover
+			opacity: 1
+		&.is-active
+			opacity: 1
+			span
+				&:before
+					opacity: 1
+					+gpu
+		span 
+			position: relative
+			display: inline-block
+			vertical-align: top
+			&:before
+				content: ''
+				position: absolute
+				left: 0
+				right: 0
+				bottom: -9px
+				border-top: 1px solid $green
+				opacity: 0
+				transform: translate3d(0,10px,0)
+				transition: opacity 0.3s, transform 0.3s
+	&__footer
+		display: block
+		padding: 20px 40px
+		color: $blue
+		+f(16px, null, 1.5)
+		+md 
+			padding: 30px 20px
+			margin: 0 auto
+			max-width: 380px
+			+f(30px, null, 1.467)
+		+hover 
+			span 
+				border-color: $blue
+		span 
+			border-bottom: 1px solid rgba($blue, 0)
+			transition: border-color 0.3s
