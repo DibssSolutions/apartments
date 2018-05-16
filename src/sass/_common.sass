@@ -1,9 +1,10 @@
 body
 	min-width: 320px
 	color: $dark
-	background: $white
-	font-family: $book
+	font-family: $futura
 	+f(16px, 400, 1.25)
+	+font-smoothing
+	background: $white
 
 .out
 	+clr
@@ -15,3 +16,23 @@ body
 		padding-top: 100px
 	+sm 
 		padding-top: 50px
+
+// titles
+.title-lg,
+h1
+	+f(34px, 500, 1.25)
+	font-family: $futura
+.title-md,
+h2
+	+f(26px, 500, 1.25)
+	font-family: $futura
+.title-sm,
+h3
+	+f(24px, 500, 1.25)
+.title-xs,
+h4
+	+f(20px, 700, 1.5)
+	
+// color block
+.text-green
+	color: $green 

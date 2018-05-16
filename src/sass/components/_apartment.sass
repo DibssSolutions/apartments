@@ -1,0 +1,78 @@
+.apartment
+	color: $white 
+	height: 100vh
+	background-color: $darckBg 
+	&__hero
+	&__wrap
+		position: relative
+		z-index: 1
+		margin-top: -124px
+		padding: 0 40px 80px 30px
+	&__field
+		display: flex
+	&__left
+		padding-right: 20px
+		flex-grow: 1
+	&__title
+		margin-bottom: 21px
+	&__title-md
+		margin-bottom: 29px
+	&__text
+		max-width: 752px
+		opacity: 0.6
+	&__right
+		flex: 0 0 262px 
+	&__btn
+	&__col
+	&__title-xs
+	&__list
+	&__item
+	&__row
+	&__col
+	&__title-xs
+	&__list
+	&__item
+	&__item
+	&__scheme
+
+.hero
+	position: relative
+	padding: 60px 40px 160px 30px
+	background-position: 50% 50%
+	background-repeat: no-repeat 
+	background-size: cover
+	&:before
+		position: absolute
+		content: "" 
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-image: linear-gradient(-180deg, rgba(14,10,28,0.51) 0%, #0E0A1C 89%)
+	&__inner
+		position: relative
+		z-index: 1
+	&__prev
+		margin-bottom: 21px
+	&__photos
+		margin-right: -40px
+		+clr
+	&__photos-inner
+		position: relative
+		float: right
+		width: 526px
+		font-size: 0
+		white-space: nowrap
+		overflow: auto
+	&__photo
+		width: 182px
+		height: 111px
+		border-radius: 5px
+		vertical-align: top
+		background-position: 50% 50%
+		background-repeat: no-repeat 
+		background-size: cover
+		display: inline-block
+		&:not(:first-child)
+			margin-left: 21px
+		

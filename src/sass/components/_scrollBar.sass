@@ -1,0 +1,33 @@
+.ps
+	position: relative
+	.ps__rail-x,
+	.ps__rail-y
+		height: 8px
+		background-color: transparent 
+	.ps__rail-x:focus>.ps__thumb-x, .ps__rail-x:hover>.ps__thumb-x
+		background-color: rgba($black, 0.3) 
+	.ps__thumb-y,
+	.ps__thumb-x
+		border-radius: 4px
+		background-color: rgba($white, 0.5)
+		&:before
+			position: absolute 
+			content: "" 
+			top: -2px
+			left: 0px
+			right: 0px
+			bottom: -2px
+	.ps__thumb-x
+		height: 4px
+	.ps__rail-x:focus>.ps__thumb-x, .ps__rail-x:hover>.ps__thumb-x
+		height: 4px
+	.ps__rail-x:focus>.ps__thumb-x, .ps__rail-x:hover>.ps__thumb-x,
+	.ps__rail-y:focus>.ps__thumb-y, .ps__rail-y:hover>.ps__thumb-y
+		cursor: pointer
+		background-color: $white 
+	.ps__thumb-y
+		width: 4px
+	.ps__rail-y:focus>.ps__thumb-y, .ps__rail-y:hover>.ps__thumb-y
+		width: 4px
+.ps--focus>.ps__rail-x, .ps--focus>.ps__rail-y, .ps--scrolling-x>.ps__rail-x, .ps--scrolling-y>.ps__rail-y, .ps:hover>.ps__rail-x, .ps:hover>.ps__rail-y
+	opacity: 1
