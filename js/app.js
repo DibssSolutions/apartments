@@ -151,6 +151,18 @@ eval("\n\nvar _constants = __webpack_require__(/*! ./constants */ \"./constants.
 
 /***/ }),
 
+/***/ "./components/accordeon.js":
+/*!*********************************!*\
+  !*** ./components/accordeon.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("/* WEBPACK VAR INJECTION */(function($) {\n\nvar _constants = __webpack_require__(/*! ../constants */ \"./constants.js\");\n\nvar accordeons = $('.js-accordion');\nvar accordeonTrigger = $('.js-accordion-trigger');\nvar accordeonsWrap = parent.find('.js-accordion-wrap');\n\naccordeonTrigger.on('click', function () {\n  var that = $(this);\n  var parent = that.parents('.js-accordion');\n  var thatAccordeonWrap = parent.find('.js-accordion-wrap');\n  if (!parent.hasClass(_constants.OPEN)) {\n    accordeons.removeClass(_constants.OPEN);\n    accordeonsWrap.slideUp(500);\n    parent.addClass(_constants.OPEN);\n    thatAccordeonWrap.slideDown(500);\n  } else {\n    parent.removeClass(_constants.OPEN);\n    thatAccordeonWrap.slideUp(500);\n  }\n});\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ \"../../node_modules/jquery/dist/jquery.js\")))\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL2FjY29yZGVvbi5qcy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy9zcmMvanMvY29tcG9uZW50cy9hY2NvcmRlb24uanM/MjkyMiJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBPUEVOIH0gZnJvbSAnLi4vY29uc3RhbnRzJztcbmNvbnN0IGFjY29yZGVvbnMgPSAkKCcuanMtYWNjb3JkaW9uJyk7XG5jb25zdCBhY2NvcmRlb25UcmlnZ2VyID0gJCgnLmpzLWFjY29yZGlvbi10cmlnZ2VyJyk7XG5jb25zdCBhY2NvcmRlb25zV3JhcCA9IHBhcmVudC5maW5kKCcuanMtYWNjb3JkaW9uLXdyYXAnKTtcblxuYWNjb3JkZW9uVHJpZ2dlci5vbignY2xpY2snLCBmdW5jdGlvbigpIHtcbiAgY29uc3QgdGhhdCA9ICQodGhpcyk7XG4gIGNvbnN0IHBhcmVudCA9IHRoYXQucGFyZW50cygnLmpzLWFjY29yZGlvbicpO1xuICBjb25zdCB0aGF0QWNjb3JkZW9uV3JhcCA9IHBhcmVudC5maW5kKCcuanMtYWNjb3JkaW9uLXdyYXAnKTtcbiAgaWYgKCFwYXJlbnQuaGFzQ2xhc3MoT1BFTikpIHtcbiAgXHRhY2NvcmRlb25zLnJlbW92ZUNsYXNzKE9QRU4pO1xuICBcdGFjY29yZGVvbnNXcmFwLnNsaWRlVXAoNTAwKTtcbiAgXHRwYXJlbnQuYWRkQ2xhc3MoT1BFTik7XG4gIFx0dGhhdEFjY29yZGVvbldyYXAuc2xpZGVEb3duKDUwMCk7XG4gIH1cbiAgZWxzZSB7XG4gICAgcGFyZW50LnJlbW92ZUNsYXNzKE9QRU4pO1xuICAgIHRoYXRBY2NvcmRlb25XcmFwLnNsaWRlVXAoNTAwKTtcbiAgfVxufSk7XG4iXSwibWFwcGluZ3MiOiI7O0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./components/accordeon.js\n");
+
+/***/ }),
+
 /***/ "./components/index.js":
 /*!*****************************!*\
   !*** ./components/index.js ***!
@@ -159,7 +171,7 @@ eval("\n\nvar _constants = __webpack_require__(/*! ./constants */ \"./constants.
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ./nav */ \"./components/nav.js\");\n\n__webpack_require__(/*! ./item */ \"./components/item.js\");\n\n__webpack_require__(/*! ./initPerfectScrollbar */ \"./components/initPerfectScrollbar.js\");\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL2luZGV4LmpzLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL3NyYy9qcy9jb21wb25lbnRzL2luZGV4LmpzPzdjYmQiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICcuL25hdic7XG5pbXBvcnQgJy4vaXRlbSc7XG5pbXBvcnQgJy4vaW5pdFBlcmZlY3RTY3JvbGxiYXInO1xuIl0sIm1hcHBpbmdzIjoiOztBQUFBO0FBQ0E7QUFBQTtBQUNBO0FBQUEiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/index.js\n");
+eval("\n\n__webpack_require__(/*! ./nav */ \"./components/nav.js\");\n\n__webpack_require__(/*! ./item */ \"./components/item.js\");\n\n__webpack_require__(/*! ./initPerfectScrollbar */ \"./components/initPerfectScrollbar.js\");\n\n__webpack_require__(/*! ./accordeon */ \"./components/accordeon.js\");\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL2luZGV4LmpzLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL3NyYy9qcy9jb21wb25lbnRzL2luZGV4LmpzPzdjYmQiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICcuL25hdic7XG5pbXBvcnQgJy4vaXRlbSc7XG5pbXBvcnQgJy4vaW5pdFBlcmZlY3RTY3JvbGxiYXInO1xuaW1wb3J0ICcuL2FjY29yZGVvbic7XG4iXSwibWFwcGluZ3MiOiI7O0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFBQTtBQUNBO0FBQUEiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/index.js\n");
 
 /***/ }),
 
