@@ -1,4 +1,5 @@
 .ps
+	position: relative
 	.ps__rail-x,
 	.ps__rail-y
 		z-index: 1
@@ -38,3 +39,59 @@
 		width: 4px
 .ps--focus>.ps__rail-x, .ps--focus>.ps__rail-y, .ps--scrolling-x>.ps__rail-x, .ps--scrolling-y>.ps__rail-y, .ps:hover>.ps__rail-x, .ps:hover>.ps__rail-y
 	opacity: 1
+
+.white-scrollbar
+	.ps__rail-x
+		bottom: 19px
+		height: 9px !important
+		&:before
+			top: 0
+			left: 12px
+			right: 12px
+			bottom: 0
+	.ps__rail-y
+		right: 19px
+		width: 9px !important
+		&:before
+			top: 12px
+			left: 0
+			right: 0
+			bottom: 12px
+	.ps__rail-x, 
+	.ps__rail-y
+		&:before
+			content: ''
+			position: absolute
+			border-radius: 5px
+			background: rgba($white, 0.1)
+	.ps__thumb-x
+		bottom: 0
+		height: 100% !important
+		&:before
+			top: 0
+			left: 12px
+			right: 12px
+			bottom: 0
+	.ps__thumb-y
+		right: 0
+		width: 100% !important
+		&:before
+			top: 12px
+			left: 0
+			right: 0
+			bottom: 12px
+	.ps__thumb-x,
+	.ps__thumb-y
+		background: none !important
+		&:before
+			content: ''
+			position: absolute
+			border-radius: 5px
+			background: $white
+	.white-scrollbar
+		.ps__rail-x
+			bottom: 5px
+			height: 5px !important
+		.ps__rail-y
+			right: 5px
+			width: 5px !important

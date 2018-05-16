@@ -1,4 +1,5 @@
 .items
+	position: relative
 	overflow: auto
 	height: 100%
 	background: #f8f6f7
@@ -23,15 +24,21 @@
 		.item 
 			&__img
 				height: 240px
+			&__container
+				animation: soar 3.5s ease-in-out forwards
 			&__control
 				span 
 					transform: rotate(45deg)
+	&.is-animated
+		.item
+			&__slider
+				overflow: auto !important
 	&__img
 		width: 100%
 		height: 100%
 		+cover
 		+gpu
-		transition: height 0.4s
+		transition: height 0.3s ease-in-out
 	&__container
 		position: absolute
 		left: 30px
@@ -44,6 +51,7 @@
 		max-height: calc(100% - 239px)
 		background: $white
 		box-shadow: 0 40px 34px -20px rgba(0,0,0,0.13)
+		animation: soar 3.5s ease-in-out infinite
 	&__control
 		position: absolute
 		top: 0
@@ -87,7 +95,7 @@
 		flex-grow: 1
 		padding: 30px 50px 20px
 	&__slider
-		overflow: auto
+		overflow: visible !important
 		padding: 0 50px
 		margin: 0 -50px 20px
 		font-size: 0
@@ -95,6 +103,8 @@
 	&__slide
 		display: inline-block
 		vertical-align: top
+		opacity: 0
+		transform: translate3d(0, 100%, 0)
 		&:not(:last-child)
 			margin-right: 10px
 		&-in 
@@ -118,3 +128,14 @@
 	&__btn
 		&:not(:last-child)
 			margin-bottom: 13px
+	&__element
+		opacity: 0
+		transform: translate3d(0,50px,0)
+
+@keyframes soar
+	0%
+		transform: translate3d(0,0,0)
+	50%
+		transform: translate3d(0,-10px,0)
+	100%
+		transform: translate3d(0,0,0)
