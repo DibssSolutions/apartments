@@ -1,41 +1,58 @@
 .apartment
+	position: relative
 	color: $white 
 	height: 100vh
+	overflow: auto
 	background-color: $darckBg 
-	&__hero
 	&__wrap
 		position: relative
 		z-index: 1
-		margin-top: -124px
-		padding: 0 40px 80px 30px
+		margin-top: -165px
+		padding: 0 40px 80px
 	&__field
+		padding: 49px 0 39px
 		display: flex
+		&:not(:last-child)
+			border-bottom: 1px solid rgba($white, 0.1)
 	&__left
-		padding-right: 20px
+		padding-right: 80px
 		flex-grow: 1
+	&__right
+		flex: 0 0 262px 
+	&__out
+		width: 91%
 	&__title
-		margin-bottom: 21px
+		margin-bottom: 25px
 	&__title-md
-		margin-bottom: 29px
+		margin-bottom: 31px
+		padding-top: 8px 
+		text-align: center
+	&__title-xs
+		opacity: 0.6
 	&__text
-		max-width: 752px
 		opacity: 0.6
 		font-size: 20px
 		line-height: 1.5
-	&__right
-		flex: 0 0 262px 
-	&__btn
-	&__col
-	&__title-xs
-	&__list
-	&__item
 	&__row
+		margin: 0 -15px
+		+clr
+		&:not(:last-child)
+			margin-bottom: 32px
 	&__col
-	&__title-xs
+		float: left
+		padding: 0 15px
+		width: 33.3%
 	&__list
+		font-size: 20px
 	&__item
-	&__item
+		display: block
+		&:not(:first-child)
+			margin-top: 5px
 	&__scheme
+		padding-left: 9px 
+		img
+			max-width: 100%
+			display: block
 
 .hero
 	position: relative
@@ -63,6 +80,8 @@
 		position: relative
 		float: right
 		width: 526px
+		height: 111px
+		overflow: hidden
 		font-size: 0
 		white-space: nowrap
 		overflow: auto
