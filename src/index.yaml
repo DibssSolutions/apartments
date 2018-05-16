@@ -9,3 +9,5 @@ PageList:
   ready: 50
 - file: apartments.html
   ready: 50
+- file: location.html
+  ready: 50
