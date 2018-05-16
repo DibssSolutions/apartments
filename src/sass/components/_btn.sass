@@ -3,15 +3,26 @@
 	vertical-align: top
 	padding: 15px 20px
 	border-radius: 5px
-	color: $white
-	background: $green
 	font-family: $futura
 	+f(16px, 500, 1.25)
 	transition: background 0.3s
+	+md 
+		padding: 10px 16px 9px
+		border-radius: 3px
+		+f(13px)
 	&_green
+		color: $white
+		background: $green
 		+hover
 			background: $lightGreen
 		+active
 			background: $darkGreen
+	&_gray
+		color: $white
+		background: #D5D5D5
+		+hover 
+			background: lighten(#D5D5D5, 3%)
+		+active 
+			background: darken(#D5D5D5, 3%)
 	&_wide
 		width: 100%

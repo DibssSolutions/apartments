@@ -5,3 +5,5 @@ PageList:
   ready: 50
 - file: error.html
   ready: 50
+- file: choice.html
+  ready: 50

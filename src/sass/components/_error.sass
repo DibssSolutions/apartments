@@ -15,15 +15,20 @@
 		margin-bottom: 72px
 		width: 80%
 		max-width: 974px
+		+md 
+			max-width: 540px
+		+sm 
+			margin-bottom: 35px
+			max-width: 360px
 	&__description
 		padding: 0 20px
 		margin: 0 auto
 		max-width: 490px
 		font-family: $book
 		+f(25px, 400, 1.2)
+		+md 
+			max-width: 360px
+			+f(18px)
 		+sm
-			max-width: 400px
-			+f(20px)
-		+xs 
-			max-width: 310px
-			+f(15px)
+			max-width: 270px
+			+f(13px)

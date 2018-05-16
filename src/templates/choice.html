@@ -1,0 +1,57 @@
+---
+title: Index page
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="items">
+		<div class="items__content">
+			{% for item in [
+				{ title: 'Апартаменты с 1 спальней' },
+				{ title: 'Апартаменты с 1 спальней' },
+				{ title: 'Апартаменты с 2 спальнями' },
+				{ title: 'Апартаменты с 3 спальнями' }
+			] %}
+				<div class="items__col">
+					<div class="item js-item">
+						<div class="item__img" style="background-image: url(https://placecage.com/1600/900);"></div>
+						<div class="item__container">
+							<button class="item__control js-item-control">
+								<span></span>
+							</button>
+							<div class="item__title">{{item.title}}</div>
+							<div class="item__content js-item-content">
+								<div class="item__slider">
+									{% for item in range(0,5) %}
+										<div class="item__slide">
+											<div class="item__slide-in" style="background-image: url(https://placecage.com/182/111);"></div>
+										</div>
+									{% endfor %}
+								</div>
+								<div class="item__description">
+									<p>Many people sign up for affiliate programs with the hopes of making some serious money.</p>
+									<p>They advertise a few places and then wait for the money to start pouring in. When it doesn’t, they blame it on the program and quit.</p>
+									<br>
+									<p>I am convinced the only way to make money online is to have a consistent Advertising plan. A plan you are willing to work hard on and commit to for a selected period of time. When making this plan, you need to do two things.  First, you should pick a few affiliate programs that are of interest to you. Second, you need to decide how long you want to work these programs. Once you decide on a time period (I recommend 6 months to a year), you must make a promise to yourself that you will not stop advertising until that time period is up. This is perhaps the most important factor in your success.</p>
+									<br>
+									<p>Next, you need to consider your advertising options: traffic exchanges, classified ads, e-mail campaigns, ezine articles, posting to forums or message boards, chatting with others who are interested in what you have to offer, and posting flyers around your town. Now you see the many possible advertising avenues you can choose from. I recommend doing all of them. It may sound like a lot of work, but when broken down into a plan, it is not.</p>
+									<br>
+									<p>One possible plan may look like this: Traffic Exchanges-1 hour per day. Post 15 classified ads per day. Make 5 posts to a message board or forum per day. Submit an article once per week to an ezine. Visit chat rooms and distribute flyers as you have extra time during the week. This all can be accomplished by spending 2-3 hours per day. You will be surprised how much you get done when you have a plan. You may also choose whether you will work 5 or 6 days per week. Make a checklist for each day of the week, and mark each task off as you finish it. That will keep you on focus, and will make you feel good that you are one step closer to reaching your goal.</p>
+									<br>
+									<p>Make a commitment to your new plan and don’t get involved in any other programs until your current programs are making you money consistently. Don’t give up. Sticking with this plan will significantly improve your success. Remember, Advertise, Advertise, Advertise.</p>
+								</div>
+								<div class="item__price">От <span>20 000 ₽</span> за сутки</div>
+								<div class="item__btns">
+									<button class="btn btn_gray btn_wide item__btn">Подробнее</button>
+									<button class="btn btn_green btn_wide item__btn">Забронировать</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}

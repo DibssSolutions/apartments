@@ -10,23 +10,59 @@
 	font-weight: 400
 	text-align: center
 	+md 
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
 		float: none
 		overflow: visible
 		width: auto
-		height: auto
-		min-height: 100px
+		min-width: 320px
+		height: 100px
 	+sm 
-		min-height: 50px
+		height: 50px
 		box-shadow: 0 11px 16px 0 rgba($black,0.35)
+	&__top
+		+md 
+			position: relative
+			z-index: 20
+			background: $dark
 	&__body 
 		+md 
-			display: none
+			position: absolute
+			left: 0
+			right: 0
+			bottom: 100%
+			padding-top: 100px
+			height: 100vh
+			background: $dark
+			transform: translate3d(0,0,0)
+			transition: transform 0.4s
+		+sm 
+			padding-top: 50px
+		&.is-open
+			+md 
+				transform: translate3d(0,100%,0)
+	&__content
+		+md 
+			overflow: auto
+			height: 100%
 	&__order
 		padding: 40px 47px
 		border-top: 1px solid rgba($white, 0.2)
+		+md 
+			padding: 20px 8px
+			margin: 0 auto
+			border-bottom: 1px solid rgba($white, 0.2)
+			max-width: 137px
 	&__contacts
 		padding-bottom: 20px
 		+f(16px, null, 1)
+		+md 
+			padding: 37px 20px 25px
+			margin: 0 auto
+			max-width: 203px
+			+f(13px)
 		li 
 			&:not(:last-child)
 				margin-bottom: 10px
@@ -39,10 +75,20 @@
 	&__address
 		padding: 0 30px 30px
 		+f(16px, null, 1.375)
+		+md 
+			padding: 0 20px 25px
+			margin: 0 auto
+			max-width: 203px
+			+f(13px, null, 1.385)
 	&__copyright
 		padding: 0 25px 30px
 		color: #9393A5
 		+f(14px, null, 1.286)
+		+md
+			padding: 0 20px 30px
+			margin: 0 auto
+			max-width: 242px
+			+f(13px, null, 1.385)
 
 .btn-nav
 	position: absolute
@@ -57,7 +103,7 @@
 	+sm 
 		width: 42px
 		height: 50px
-	+hover
+	&.is-active
 		&:before
 			transform: translate3d(4px,0,0) rotate(45deg)
 			+sm 
@@ -149,7 +195,7 @@
 .nav
 	padding: 20px 0
 	+md 
-		padding: 14px 0 20px
+		padding: 17px 0 10px
 	&__link
 		position: relative
 		display: block
@@ -159,8 +205,8 @@
 		+f(16px, null, 1)
 		transition: opacity 0.3s
 		+md 
-			padding: 30px
-			+f(30px)
+			padding: 15px
+			+f(15px)
 		+hover
 			opacity: 1
 		&.is-active
@@ -189,10 +235,10 @@
 		color: $blue
 		+f(16px, null, 1.5)
 		+md 
-			padding: 30px 20px
+			padding: 15px 20px
 			margin: 0 auto
-			max-width: 380px
-			+f(30px, null, 1.467)
+			max-width: 210px
+			+f(15px, null, 1.467)
 		+hover 
 			span 
 				border-color: $blue
