@@ -8,8 +8,10 @@ PageList:
 - file: choice.html
   ready: 50
 - file: apartments.html
-  ready: 50
+  ready: 100
 - file: location.html
-  ready: 50
+  ready: 100
+- file: location-route.html
+  ready: 100
 - file: interiors.html
   ready: 50
