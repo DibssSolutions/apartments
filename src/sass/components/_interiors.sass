@@ -1,0 +1,163 @@
+.interiors
+	position: relative
+	background: $dark
+	&__back
+		position: absolute
+		z-index: 10
+		top: 60px
+		left: 50px
+		+sm 
+			top: 30px
+			left: 20px
+	&__slider
+		+sm 
+			overflow: auto
+			white-space: nowrap
+	&__slide
+		position: relative
+		height: 100vh
+		white-space: normal
+		+sm
+			display: inline-block
+			vertical-align: top
+			width: 100vw
+	&__background
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 177px
+		display: flex
+		align-items: flex-end
+		+cover
+		+sm 
+			bottom: 0
+			padding-bottom: 54px
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			background-image: linear-gradient(-180deg, rgba(14,10,28,0.89) 0%, rgba(14,10,28,0.26) 21%, rgba(14,10,28,0.00) 60%, #0E0A1C 95%)
+			+sm 
+				background-image: linear-gradient(-180deg, rgba(14,10,28,0.00) 0%, rgba(14,10,28,0.00) 46%, rgba(14,10,28,0.73) 68%, #0E0A1C 95%)
+	&__content
+		position: relative
+		z-index: 10
+		padding: 0 50px
+		color: $white
+		font-size: 0
+		+sm 
+			padding: 0 36px
+	&__text
+		padding-bottom: 5px
+		width: 70%
+		+sm 
+			padding-bottom: 15px
+	&__btn 
+		width: 30%
+		text-align: right
+	&__text,
+	&__btn 
+		display: inline-block
+		vertical-align: bottom
+		+sm 
+			display: block
+			width: auto
+			text-align: center
+	&__title
+		margin-bottom: 15px
+		+sm 
+			margin-bottom: 10px
+			+f(20px, null, 1.2)
+	&__description
+		overflow: hidden
+		max-height: 3em*1.25
+		font-family: $futura
+		+f(16px, 500, 1.25)
+		+sm 
+			max-height: 3em*1.334
+			opacity: 0.5
+			+f(15px, null, 1.334)
+	&__thumbnails
+		position: absolute
+		z-index: 10
+		left: 0
+		right: 0
+		bottom: 0
+		overflow: auto
+		padding: 52px 43px
+		white-space: nowrap
+		+sm 
+			display: none
+		&-in
+			display: inline-block
+			vertical-align: top
+	&__thumbnail 
+		display: inline-block
+		vertical-align: top
+		padding: 0 7px
+		&.is-active
+			.interiors__preview
+				opacity: 1
+	&__preview
+		border-radius: 4px
+		width: 127px
+		height: 78px
+		opacity: 0.5
+		+cover
+		cursor: pointer
+		transition: opacity 0.3s
+		+hover
+			opacity: 1
+	&__arrow
+		position: absolute
+		z-index: 30
+		top: 50%
+		margin-top: -32px
+		border-radius: 50%
+		width: 64px
+		height: 64px
+		color: $blue
+		background: $white
+		+vertical
+		transition: color 0.3s, opacity 0.3s, background 0.3s, visibility 0.3s
+		+sm 
+			width: 50px
+			height: 50px
+			color: $white
+			background: rgba($black, 0.2)
+		+hover 
+			color: $white
+			background: $blue
+			+sm 
+				color: $dark
+				background: $white
+		&.disabled
+			opacity: 0
+			visibility: hidden
+			pointer-events: none
+	&__prev 
+		left: 33px
+		+sm 
+			left: 0
+		.interiors__icon
+			transform: translateX(-2px)
+	&__next
+		right: 33px
+		+sm 
+			right: 0
+		.interiors__icon
+			transform: translateX(2px)
+	&__icon
+		display: inline-block
+		vertical-align: middle
+		font-size: 25px
+		+sm 
+			font-size: 20px
+	&__scroll-to
+		display: none
+		+sm 
+			display: block
