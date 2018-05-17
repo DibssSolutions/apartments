@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Location</title>
+    <title>Location route</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#fff">
@@ -78,11 +78,47 @@
         <div class="location">
           <div class="location__wrap js-scroll-wrap">
             <div class="location__hero">
-              <h2 class="location__title-lg title-lg">Расположение</h2>
-              <p>Many people sign up for affiliate programs with the hopes of making some serious money.</p>
-              <div class="location__footer">
-                <a href="#" class="btn btn_blue btn_md">Проложить маршрут</a>
-              </div>
+              <form action="/">
+                <!-- begin directions -->
+                <div class="directions">
+                  <div class="directions__wrap">
+                    <div class="directions__field">
+                      <div class="directions__icon">
+                        <svg class="icon icon-circle">
+                          <use xlink:href="img/sprite.svg#icon-circle"></use>
+                        </svg>
+                      </div>
+                      <div class="directions__input input js-input">
+                        <label for="location" class="label">Откуда</label>
+                        <input type="text" id="location"> </div>
+                      <button class="directions__btn" type="button">
+                        <svg class="icon icon-location">
+                          <use xlink:href="img/sprite.svg#icon-location"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="directions__field">
+                      <div class="directions__icon">
+                        <svg class="icon icon-marker">
+                          <use xlink:href="img/sprite.svg#icon-marker"></use>
+                        </svg>
+                      </div>
+                      <div class="directions__input input js-input">
+                        <label for="where" class="label">Куда</label>
+                        <input type="text" id="where"> </div>
+                    </div>
+                    <button class="directions__rotate" type="button">
+                      <svg class="icon icon-rotate">
+                        <use xlink:href="img/sprite.svg#icon-rotate"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!-- end directions -->
+                <div class="location__footer">
+                  <button class="btn btn_blue btn_md" type="submit">Проложить маршрут</button>
+                </div>
+              </form>
             </div>
             <div class="location__accordions">
               <!-- begin accordion -->
