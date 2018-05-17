@@ -35,7 +35,21 @@ containers.each((index, container) => {
     }, 0.1, 'content')
     .eventCallback('onComplete', () => container.addClass(ANIMATED));
 
-  const hide = new TimelineMax({ paused: true }).to(content, 0.4, { opacity: 0 });
+  // const hideAnimation = new TimelineMax({ paused: true }).to(content, 0.4, { opacity: 0 });
+
+  const hide = () => {
+    container
+      .removeClass(ANIMATED)
+      .removeClass(ACTIVE);
+    active = !active;
+    new TimelineMax().to(content, 0.4, { opacity: 0 });
+    scrollParent.removeClass(HIDDEN);
+    content.slideUp(DURATION, () => {
+      TweenMax.set([slides, elements, content],{clearProps:'all'});
+      if (!winWidth(widthXS)) return;
+      scrollParentDOM.perfectScrollbar = new PerfectScrollbar(scrollParentDOM);
+    });
+  };
 
   watch.push(() => {
     if (!active) return;
@@ -89,30 +103,11 @@ containers.each((index, container) => {
 
       activeItem = {
         index,
-        hide() {
-          container
-            .removeClass(ANIMATED)
-            .removeClass(ACTIVE);
-          active = !active;
-          hide.play(0);
-          scrollParent.removeClass(HIDDEN);
-          content.slideUp(DURATION, () => {
-            TweenMax.set([slides, elements, content],{clearProps:'all'});
-            if (!winWidth(widthXS)) return;
-            scrollParentDOM.perfectScrollbar = new PerfectScrollbar(scrollParentDOM);
-          });
-        }
+        hide
       };
 
     } else {
-      active = !active;
-      hide.play(0);
-      scrollParent.removeClass(HIDDEN);
-      content.slideUp(DURATION, () => {
-        TweenMax.set([slides, elements, content],{clearProps:'all'});
-        if (!winWidth(widthXS)) return;
-        scrollParentDOM.perfectScrollbar = new PerfectScrollbar(scrollParentDOM);
-      });
+      hide();
     }
   });
 });
