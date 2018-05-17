@@ -11,3 +11,5 @@ PageList:
   ready: 50
 - file: location.html
   ready: 50
+- file: interiors.html
+  ready: 50

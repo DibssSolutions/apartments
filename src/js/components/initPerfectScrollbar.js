@@ -6,6 +6,6 @@ DOC.ready(() => {
 
   if (!containers) return;
   for (var i = 0; i <= containers.length - 1; i++) {
-  	new PerfectScrollbar(containers[i]);
+  	containers[i].perfectScrollbar = new PerfectScrollbar(containers[i]);
   }
 });

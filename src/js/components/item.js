@@ -1,18 +1,23 @@
-import {ACTIVE} from '../constants';
+import {WIN, ACTIVE, HIDDEN, widthXS, winWidth} from '../constants';
 import {TimelineMax, TweenMax} from 'gsap';
+import PerfectScrollbar from 'perfect-scrollbar';
 
 const containers = $('.js-item');
 const ANIMATED = 'is-animated';
 const DURATION = 400;
 const SCROLL_DURATION = 400;
+const watch = [];
+const hideScroll = container => winWidth(widthXS) && container.perfectScrollbar.destroy();
+let activeItem = null;
 
-containers.each((i, container) => {
+containers.each((index, container) => {
   container = $(container);
   const control = container.find('.js-item-control');
   const content = container.find('.js-item-content');
   const slides = container.find('.js-item-slide');
   const elements = container.find('.js-item-element');
   const scrollParent = container.closest('.js-scroll-wrap');
+  const scrollParentDOM = scrollParent.get(0);
   let active = false;
 
   const show = new TimelineMax({ paused: true })
@@ -32,6 +37,21 @@ containers.each((i, container) => {
 
   const hide = new TimelineMax({ paused: true }).to(content, 0.4, { opacity: 0 });
 
+  watch.push(() => {
+    if (!active) return;
+
+    if (winWidth(widthXS)) {
+      const scrollLeft = scrollParent.scrollLeft();
+      const scrollParentLeft = scrollParent.offset().left;
+      const containerLeft = container.offset().left;
+      scrollParent.scrollLeft(scrollLeft + ( containerLeft - scrollParentLeft ));
+      scrollParent.addClass(HIDDEN);
+      hideScroll(scrollParentDOM);
+    } else {
+      scrollParentDOM.perfectScrollbar = new PerfectScrollbar(scrollParentDOM);
+    };
+  });
+
   control.on('click', e => {
     e.preventDefault();
     
@@ -42,7 +62,7 @@ containers.each((i, container) => {
     if (!active) {
       active = !active;
       show.play(0);
-      content.slideDown(DURATION);
+      content.slideDown(DURATION, () => winWidth(widthXS) && scrollParent.addClass(HIDDEN) );
 
 
       const scrollParentLeft = scrollParent.offset().left;
@@ -54,19 +74,48 @@ containers.each((i, container) => {
       //scroll to right
       containerRight > scrollParentRight && scrollParent.animate({
         scrollLeft: scrollLeft + ( containerRight - scrollParentRight )
-      }, SCROLL_DURATION);
+      }, SCROLL_DURATION, () => hideScroll(scrollParentDOM));
 
       //scroll to left
       containerLeft < scrollParentLeft && scrollParent.animate({
         scrollLeft: scrollLeft + ( containerLeft - scrollParentLeft )
-      }, SCROLL_DURATION);
+      }, SCROLL_DURATION, () => hideScroll(scrollParentDOM));
+
+      if (containerLeft >= scrollParentLeft || containerRight <= scrollParentRight) {
+        hideScroll(scrollParentDOM);
+      }
+
+      activeItem && activeItem.index !== index && activeItem.hide();
+
+      activeItem = {
+        index,
+        hide() {
+          container
+            .removeClass(ANIMATED)
+            .removeClass(ACTIVE);
+          active = !active;
+          hide.play(0);
+          scrollParent.removeClass(HIDDEN);
+          content.slideUp(DURATION, () => {
+            TweenMax.set([slides, elements, content],{clearProps:'all'});
+            if (!winWidth(widthXS)) return;
+            scrollParentDOM.perfectScrollbar = new PerfectScrollbar(scrollParentDOM);
+          });
+        }
+      };
 
     } else {
       active = !active;
       hide.play(0);
+      scrollParent.removeClass(HIDDEN);
       content.slideUp(DURATION, () => {
         TweenMax.set([slides, elements, content],{clearProps:'all'});
+        if (!winWidth(widthXS)) return;
+        scrollParentDOM.perfectScrollbar = new PerfectScrollbar(scrollParentDOM);
       });
     }
   });
 });
+
+
+watch.length && WIN.on('resize', () => watch.forEach(fn => fn()));

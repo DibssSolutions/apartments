@@ -3,6 +3,11 @@
 	overflow: auto
 	height: 100%
 	background: #f8f6f7
+	&.is-hidden
+		overflow: hidden !important
+		.items__col 
+			+xs
+				padding-bottom: 0
 	&__content,
 	&__col
 		height: 100%
@@ -19,9 +24,11 @@
 			padding-bottom: 37px
 			width: 100vw
 			background: $dark
+			transition: padding-bottom 0.3s
 
 .item 
 	position: relative
+	overflow: hidden
 	height: 100%
 	font-family: $futura
 	+xs 
