@@ -1,10 +1,27 @@
 .accordion
+	background-color: $white 
 	&:not(:first-child)
-		margin-top: 40px
+		margin-top: 4px
 	&__topic
+		position: relative
+		padding: 19px 60px 17px 40px
 		+f(20px, 500, 1.2)
+		cursor: pointer
+		user-select: none
+		.icon-arrow-right
+			position: absolute
+			top: 50%
+			right: 40px
+			margin-top: -7px
+			font-size: 15px
+			transition: transform .35s ease-in-out
+			.accordion.is-open &
+				+rotate(90)
 	&__wrap
-		padding: 10px 0
+		padding: 3px 40px 25px
 		line-height: 1.875
 		color: rgba($dark, 0.6) 
 		display: none
+	&__route
+		&:not(:first-child)
+			margin-top: 30px

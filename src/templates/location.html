@@ -7,21 +7,179 @@ title: Location
 	
 	<!-- begin location -->
 	<div class="location">
-		<div class="location__map"></div>
-		<div class="location__wrap">
+		<div class="location__wrap js-scroll-wrap">
 			<div class="location__hero">
 				<h2 class="location__title-lg title-lg">Расположение</h2>
 				<p>Many people sign up for affiliate programs with the hopes of making some serious money.</p>
 				<div class="location__footer">
-					<a href="#" class="btn">Проложить маршрут</a>
+					<a href="#" class="btn btn_blue btn_md">Проложить маршрут</a>
 				</div>
 			</div>
 			<div class="location__accordions">
-				<div class="accordion accordion_border js-accordion">
-					<div class="accordion__topic js-accordion-trigger">Рестораны</div>
-					<div class="accordion__wrap js-accordion-wrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, explicabo.</div>
+				{% for accordion in [
+					{
+						title: 'Культурные объекты',
+						list: [
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							}
+						]
+					},
+					{
+						title: 'Рестораны',
+						list: [
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							}
+						]
+					},
+					{
+						title: 'Услуги',
+						list: [
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							}
+						]
+					},
+					{
+						title: 'Покупки',
+						list: [
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							}
+						]
+					},
+					{
+						title: 'Финансы',
+						list: [
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							}
+						]
+					},
+					{
+						title: 'Спорт и фитнес',
+						list: [
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							}
+						]
+					},
+					{
+						title: 'Медицина',
+						list: [
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							},
+							{
+								name: 'Bamboo Bar',
+								time: '3 мин пешком',
+								distance: '600 метров'
+							}
+						]
+					}
+				] %}
+				<!-- begin accordion -->
+				<div class="accordion{% if loop.index == 2 %} is-open{% endif %} js-accordion">
+					<div class="accordion__topic js-accordion-trigger">{{ accordion.title }}{{ mixins.icon('arrow-right') }}</div>
+					<div class="accordion__wrap js-accordion-wrap">
+						{% for route in accordion.list %}
+						<div class="accordion__route route">
+							<div class="route__col">{{ route.name }}</div>
+							<div class="route__col">{{ route.time }}</div>
+							<div class="route__col">{{ route.distance }}</div>
+							<div class="route__btn">
+								<button class="btn btn_blue btn_md" type="button"{% if loop.index !== 1 %}disabled{% endif %}>Маршрут</button>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
 				</div>
+				<!-- end accordion -->
+				{% endfor %}
 			</div>
+		</div>
+		<div class="location__map">
+			<div class="map js-map" data-center-lat="55.753678" data-center-lng="37.621103"></div>
 		</div>
 	</div>
 	<!-- end location -->

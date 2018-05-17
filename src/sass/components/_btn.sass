@@ -24,15 +24,31 @@
 			background: lighten(#D5D5D5, 3%)
 		+active 
 			background: darken(#D5D5D5, 3%)
+	&_blue
+		color: $white
+		background: #66A6FF 
+		+hover 
+			background: lighten(#66A6FF, 3%)
+		+active 
+			background: darken(#66A6FF, 3%)
 	&_wide
 		width: 100%
 	&_lg
 		padding: 16px 20px 
 		font-size: 20px
+	&_md
+		padding: 12px 23px 
 	&_table-md
 		+md 
 			padding: 10px 15px
 			+f(15px, null, 1.35)
+	&:disabled
+		cursor: default
+		background-color: #D5D5D5 
+		+hover 
+			background: #D5D5D5
+		+active 
+			background: #D5D5D5
 .btn-prev
 	color: $white
 	font-family: $futura
