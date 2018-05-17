@@ -1,5 +1,6 @@
 import './nav';
-import './item';
 import './initPerfectScrollbar';
+import './item';
+import './interiors';
 import './accordeon';
 import './map';
