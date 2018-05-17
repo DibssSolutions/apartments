@@ -44,21 +44,35 @@
 	.ps__rail-x
 		bottom: 19px
 		height: 9px !important
+		+sm 
+			bottom: 16px
+			height: 5px !important
 		&:before
 			top: 0
 			left: 12px
 			right: 12px
 			bottom: 0
+			+sm 
+				left: 8px
+				right: 8px
 	.ps__rail-y
 		right: 19px
 		width: 9px !important
+		+sm 
+			right: 16px
+			height: 5px !important
 		&:before
 			top: 12px
 			left: 0
 			right: 0
 			bottom: 12px
+			+sm 
+				top: 8px
+				bottom: 8px
 	.ps__rail-x, 
 	.ps__rail-y
+		+sm 
+			opacity: 1
 		&:before
 			content: ''
 			position: absolute
@@ -72,6 +86,9 @@
 			left: 12px
 			right: 12px
 			bottom: 0
+			+sm 
+				left: 8px
+				right: 8px
 	.ps__thumb-y
 		right: 0
 		width: 100% !important

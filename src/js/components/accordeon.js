@@ -8,13 +8,13 @@ accordeonTrigger.on('click', function() {
   const parent = that.parents('.js-accordion');
   const thatAccordeonWrap = parent.find('.js-accordion-wrap');
   if (!parent.hasClass(OPEN)) {
-  	accordeons.removeClass(OPEN);
-  	accordeonsWrap.slideUp();
-  	parent.addClass(OPEN);
-  	thatAccordeonWrap.slideDown();
+    accordeons.removeClass(OPEN);
+    accordeonsWrap.slideUp(500);
+    parent.addClass(OPEN);
+    thatAccordeonWrap.slideDown(500);
   }
   else {
     parent.removeClass(OPEN);
-    thatAccordeonWrap.slideUp();
+    thatAccordeonWrap.slideUp(500);
   }
 });

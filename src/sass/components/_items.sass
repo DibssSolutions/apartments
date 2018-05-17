@@ -15,15 +15,23 @@
 		width: 422px
 		min-width: 30vw //36.192
 		white-space: normal
+		+xs
+			padding-bottom: 37px
+			width: 100vw
+			background: $dark
 
 .item 
 	position: relative
 	height: 100%
 	font-family: $futura
+	+xs 
+		background: $white
 	&.is-active
 		.item 
 			&__img
 				height: 240px
+				+xs
+					height: 155px
 			&__container
 				animation: soar 3.5s ease-in-out forwards
 			&__control
@@ -31,8 +39,10 @@
 					transform: rotate(45deg)
 	&.is-animated
 		.item
+			&__content
+				overflow: auto
 			&__slider
-				overflow: auto !important
+				overflow: hidden !important
 	&__img
 		width: 100%
 		height: 100%
@@ -50,8 +60,15 @@
 		border-radius: 5px
 		max-height: calc(100% - 239px)
 		background: $white
-		box-shadow: 0 40px 34px -20px rgba(0,0,0,0.13)
+		box-shadow: 0 40px 34px -20px rgba($black,0.13)
 		animation: soar 3.5s ease-in-out infinite
+		+xs
+			left: 10px
+			right: 10px
+			bottom: 27px
+			border-radius: 4px
+			max-height: calc(100% - 140px)
+			box-shadow: 0 33px 28px -16px rgba($black,0.13);
 	&__control
 		position: absolute
 		top: 0
@@ -89,17 +106,26 @@
 		color: $dark
 		+f(24px, 500, 1)
 		text-align: center
+		+xs 
+			padding-bottom: 6px
+			margin: 0 auto
+			max-width: 300px
+			+f(20px, null, 1.25)
 	&__content
 		display: none
-		overflow: auto
+		overflow: hidden
 		flex-grow: 1
-		padding: 30px 50px 20px
+		padding: 18px 50px 20px
+		+xs
+			padding: 9px 19px 0
 	&__slider
 		overflow: visible !important
 		padding: 0 50px
 		margin: 0 -50px 20px
 		font-size: 0
 		white-space: nowrap
+		+xs 
+			display: none
 	&__slide
 		display: inline-block
 		vertical-align: top
@@ -114,8 +140,14 @@
 	&__description
 		overflow: auto
 		margin-bottom: 19px
-		height: 4em*1.5
+		height: 4em * 1.5
 		+f(20px, 500, 1.5)
+		+xs
+			padding: 0 15px
+			margin-bottom: 25px
+			height: 3em * 1.35
+			+f(15px, null, 1.35)
+			text-align: center
 	&__price
 		padding: 17px 10px 20px
 		margin-bottom: 30px
@@ -123,6 +155,10 @@
 		border-bottom: 1px solid #D5D5D5
 		+f(26px, 500, 1)
 		text-align: center
+		+xs 
+			padding: 15px 10px
+			margin-bottom: 20px
+			+f(25px)
 		span 
 			color: $green
 	&__btn
@@ -130,7 +166,7 @@
 			margin-bottom: 13px
 	&__element
 		opacity: 0
-		transform: translate3d(0,50px,0)
+		transform: translate3d(0,100px,0)
 
 @keyframes soar
 	0%
