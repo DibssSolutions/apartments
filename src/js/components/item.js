@@ -101,10 +101,7 @@ containers.each((index, container) => {
 
       activeItem && activeItem.index !== index && activeItem.hide();
 
-      activeItem = {
-        index,
-        hide
-      };
+      activeItem = { index, hide };
 
     } else {
       hide();
