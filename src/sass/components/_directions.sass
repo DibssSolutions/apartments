@@ -1,13 +1,120 @@
 .directions
 	&__wrap
+		position: relative
+		padding-right: 55px
+		+sm
+			padding-right: 40px
+	&__rotate
+		position: absolute
+		right: 0
+		top: 50%
+		margin-top: -17px
+		height: 35px
+		width: 35px
+		line-height: 35px
+		text-align: center
+		border-radius: 50%
+		font-size: 0
+		background-color: #66A6FF 
+		.icon
+			font-size: 16px
+			color: $white 
+			line-height: 1
+			vertical-align: middle
 	&__field
+		position: relative
+		&:not(:first-child)
+			margin-top: 10px
 	&__icon
-	&__input
+		position: absolute
+		top: 50%
+		left: 30px
+		margin-top: -5px
+		z-index: 1
+		font-size: 0
+		+sm
+			margin-top: -3px
+			left: 15px
+		.icon
+			font-size: 10px
+			+sm
+				font-size: 6px
+		.icon-circle
+			color: #66A6FF 
+		.icon-marker
+			color: #BAC9D9 
 	&__btn
+		position: absolute
+		right: 16px
+		top: 50%
+		margin-top: -9px
+		z-index: 2
+		font-size: 0
+		background-color: transparent 
+		.icon
+			font-size: 18px
+			color: #66A6FF 
 .input
 	position: relative
+	&:before
+		position: absolute
+		content: ""
+		top: 0
+		bottom: 0
+		right: 0
+		width: 92px 
+		background-image: linear-gradient(90deg, rgba(245,245,245,0.00) 0%, #F5F5F5 89%)
+		border-radius: 0 5px 5px 0
 	input
+		padding: 4px 4px 4px 65px
+		width: 100%
+		font-family: $futura 
+		+f(20px,500,null)
+		color: $dark
+		letter-spacing: 0
 		height: 70px
 		border-radius: 5px
+		display: block
 		background-color: $wildSand
+		+lg
+			height: 60px
+			font-size: 18px
+		+sm
+			padding: 20px 4px 3px 34px
+			height: 45px
+			font-size: 15px
+		&:focus + .label
+			font-size: 13px
+			transform: translateY(-10px)
+			+lg
+				transform: translateY(-14px)
+			+sm
+				font-size: 10px
+				transform: translateY(-8px)
 .label
+	position: absolute
+	top: 50%
+	font-family: $futura 
+	+f(20px,700,null)
+	margin-top: -19px
+	left: 65px
+	font-size: 20px
+	color: #BAC9D9 
+	letter-spacing: 0.016em 
+	cursor: text
+	transition: transform .2s, font-size .2s
+	+lg
+		margin-top: -15px
+		font-size: 18px
+	+sm
+		margin-top: -9px
+		left: 34px 
+		font-size: 15px
+	.is-filled &
+		font-size: 13px
+		transform: translateY(-10px)
+		+lg
+			transform: translateY(-14px)
+		+sm
+			font-size: 10px
+			transform: translateY(-8px)

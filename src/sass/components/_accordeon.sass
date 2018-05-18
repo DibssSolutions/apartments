@@ -2,12 +2,23 @@
 	background-color: $white 
 	&:not(:first-child)
 		margin-top: 4px
+	&_mod
+		+sm
+			text-align: center
 	&__topic
 		position: relative
 		padding: 19px 60px 17px 40px
 		+f(20px, 500, 1.2)
 		cursor: pointer
 		user-select: none
+		+lg
+			font-size: 18px
+		+sm
+			padding: 16px 30px 16px 19px
+			font-size: 15px
+		.accordion_mod &
+			+sm
+				padding: 16px 19px
 		.icon-arrow-right
 			position: absolute
 			top: 50%
@@ -15,13 +26,30 @@
 			margin-top: -7px
 			font-size: 15px
 			transition: transform .35s ease-in-out
+			+sm
+				right: 15px
 			.accordion.is-open &
 				+rotate(90)
+		.accordion_mod &
+			+sm
+				padding: 16px 40px 10px 19px
+				pointer-events: none
 	&__wrap
 		padding: 3px 40px 25px
 		line-height: 1.875
 		color: rgba($dark, 0.6) 
 		display: none
+		+lg
+			font-size: 15px
+		+sm
+			padding: 0 15px 16px 19px
+			line-height: 1.33
+		.accordion_mod &
+			+sm
+				padding: 0 40px 25px
+				display: block !important
 	&__route
 		&:not(:first-child)
 			margin-top: 30px
+			+lg
+				margin-top: 20px

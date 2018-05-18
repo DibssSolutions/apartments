@@ -20,7 +20,8 @@ export default class Map {
       zoom: 18,
       disableDefaultUI: true,
       scrollwheel: false,
-      zoomControl: true
+      zoomControl: true,
+      draggable: false
     });
   }
 

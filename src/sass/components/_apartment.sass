@@ -3,61 +3,111 @@
 	color: $white 
 	min-height: 100vh
 	background-color: $darckBg 
+	+md
+		text-align: center
 	&__wrap
 		position: relative
 		z-index: 1
 		margin-top: -165px
 		padding: 0 40px 80px
+		+md
+			padding-bottom: 40px
+		+sm
+			margin-top: -98px 
+			padding: 0 28px 75px
 	&__field
 		padding: 49px 0 39px
 		width: 100%
 		display: flex
+		+md
+			display: block
+		+sm
+			padding: 28px 0
 		&:not(:last-child)
 			border-bottom: 1px solid rgba($white, 0.1)
+		&:first-child
+			+sm
+				padding-bottom: 15px
 	&__left
 		padding-right: 80px
 		flex-grow: 1
 		+xl
 			padding-right: 20px
+		+md
+			padding-right: 0
 	&__right
 		width: 262px
 		flex: 0 0 262px 
+		+md
+			margin-top: 10px
+			width: 100%
+			flex: 0 0 100%
 	&__out
 		width: 91%
 		+xl
 			width: 100%
 	&__title
 		margin-bottom: 25px
+		+sm
+			margin-bottom: 12px
 	&__title-md
 		margin-bottom: 31px
 		padding-top: 8px 
 		text-align: center
+		+md
+			margin-bottom: 15px
+		+sm
+			border-top: 1px solid rgba($white, 0.1)
+			padding-top: 15px
+			margin-bottom: 0
 	&__title-xs
 		opacity: 0.6
 	&__text
 		opacity: 0.6
 		font-size: 20px
 		line-height: 1.5
+		+sm
+			font-size: 15px
 	&__row
 		margin: 0 -15px
 		+clr
 		&:not(:last-child)
 			margin-bottom: 32px
+			+sm
+				margin-bottom: 15px 
 	&__col
 		float: left
 		padding: 0 15px
 		width: 33.3%
+		+sm
+			width: 100%
+		&:not(:first-child)
+			+sm
+				margin-top: 15px
 	&__list
 		font-size: 20px
 	&__item
 		display: block
+		+sm
+			font-size: 20px
 		&:not(:first-child)
 			margin-top: 5px
 	&__scheme
 		padding-left: 9px 
+		+md
+			display: none
 		img
 			max-width: 100%
 			display: block
+	&__btn
+		+md
+			width: auto
+			min-width: 224px
+		+sm
+			position: absolute
+			left: 50%
+			transform: translateX(-50%)
+			bottom: 40px
 
 .hero
 	position: relative
@@ -65,6 +115,9 @@
 	background-position: 50% 50%
 	background-repeat: no-repeat 
 	background-size: cover
+	+sm
+		padding: 15px 10px
+		height: 190px
 	&:before
 		position: absolute
 		content: "" 
@@ -77,10 +130,15 @@
 		position: relative
 		z-index: 1
 	&__prev
+		position: relative
+		z-index: 2
 		margin-bottom: 21px
+		text-align: left
 	&__photos
 		margin-right: -40px
 		+clr
+		+sm
+			display: none
 	&__photos-inner
 		position: relative
 		float: right

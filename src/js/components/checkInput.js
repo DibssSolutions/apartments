@@ -1,12 +1,21 @@
-const checkInputValue = () => {
-  $('input, textarea').on('keyup', function() {
-  	const that = $(this);
-    const value = that.val();
-    const parent = that.parent('.js-input');
-    if (value) {
-      parent.addClass('is-filled');
-    } else {
-      parent.removeClass('is-filled');
-    }
-  });
+const control = $('input, textarea');
+
+const checkInputValue = (that) => {
+  const value = that.val();
+  const parent = that.parent('.js-input');
+  const filled = 'is-filled';
+  if (value) {
+    parent.addClass(filled);
+  } else {
+    parent.removeClass(filled);
+  }
 };
+control
+  .each(function() {
+    const that = $(this);
+    checkInputValue(that);
+  })
+  .on('keyup', function() {
+    const that = $(this);
+    checkInputValue(that);
+  });

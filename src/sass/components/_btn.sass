@@ -64,10 +64,14 @@
 	border-color: transparent
 	vertical-align: top
 	display: inline-block 
+	+sm
+		line-height: 30px
 	&__text
 		+f(20px, 500)
 		vertical-align: middle
 		display: inline-block
+		+sm
+			font-size: 15px
 	&__icon
 		margin-right: 10px 
 		width: 38px
@@ -78,6 +82,12 @@
 		background-color: $blue 
 		vertical-align: top
 		display: inline-block
+		+sm
+			width: 30px
+			height: 30px
+			line-height: 30px
 		.icon
 			font-size: 15px
 			vertical-align: middle
+			+sm
+				font-size: 12px

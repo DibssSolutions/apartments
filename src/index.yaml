@@ -2,11 +2,11 @@ ProjectTitle: apartments
 
 PageList:
 - file: page.html
-  ready: 50
+  ready: 100
 - file: error.html
-  ready: 50
+  ready: 100
 - file: choice.html
-  ready: 50
+  ready: 100
 - file: apartments.html
   ready: 100
 - file: location.html
@@ -14,4 +14,6 @@ PageList:
 - file: location-route.html
   ready: 100
 - file: interiors.html
-  ready: 50
+  ready: 100
+- file: services-and-services.html
+  ready: 100
