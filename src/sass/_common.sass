@@ -5,13 +5,22 @@ body
 	+f(16px, 500, 1.25)
 	+font-smoothing
 	background: $white
+	+sm
+		font-size: 15px
 
 .out
 	+clr
+	+sm
+		position: relative
+		height: 100%
+		overflow: hidden
 
 .main
 	overflow: auto
 	height: 100vh
+	+sm
+		overflow: hidden
+		height: 100%
 
 .header ~ .main
 	+lg
@@ -22,10 +31,16 @@ body
 h1
 	+f(34px, 500, 1.25)
 	font-family: $futura
+	+lg
+		font-size: 28px
+	+sm
+		font-size: 20px
 .title-md,
 h2
 	+f(26px, 500, 1.25)
 	font-family: $futura
+	+sm
+		font-size: 25px
 .title-sm,
 h3
 	+f(24px, 500, 1.25)
@@ -33,6 +48,8 @@ h3
 h4
 	+f(20px, 700, 1.5)
 	letter-spacing: 0.09em
+	+sm
+		font-size: 15px
 	
 // color block
 .text-green

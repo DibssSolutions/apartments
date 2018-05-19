@@ -1,33 +1,79 @@
 .location
 	+clr
 	&__map
-		height: 100vh
-		overflow: hidden
+		position: fixed
+		top: 0
+		left: 274px
+		right: 600px
+		bottom: 0
+		+lg
+			top: 50px 
+			left: 0
+			right: 400px
+		+md
+			left: 0
+		+sm
+			position: relative
+			top: 0
+			right: 0
+			height: 220px
+			width: 100%
 	&__wrap
 		float: right
 		position: relative
 		z-index: 1
 		height: 100vh
-		width: 51%
-		max-width: 600px
-		min-width: 400px
+		width: 600px
 		box-shadow: 0 22px 31px 0 rgba(0,0,0,0.35)
 		background-color: $wildSand
-	&__hero
-		margin-bottom: 20px
-		padding: 45px 40px 20px
-		color: rgba($dark, 0.6) 
-		line-height: 1.875
-		background-color: $white 
+		&:before
+			position: fixed
+			content: "" 
+			top: 0
+			right: 0
+			width: 600px
+			bottom: 0
+			z-index: -1
+			box-shadow: 0 22px 31px 0 rgba(0,0,0,0.35)
+			+lg
+				width: 400px
+			+sm
+				display: none
+		+lg
+			width: 400px
+			height: calc(100vh - 50px)  
+		+sm
+			float: none
+			height: auto
+			width: 100%
+.topic
+	margin-bottom: 20px
+	padding: 45px 40px 20px
+	color: rgba($dark, 0.6) 
+	line-height: 1.875
+	background-color: $white 
+	.services__wrap &
+		+sm
+			padding: 18px 36px
+			margin-bottom: 10px
+	+sm
+		padding: 18px 45px 18px
+		text-align: center
+		line-height: 1.33
 	&__title-lg
 		margin-bottom: 13px
 		color: $dark 
+		.services__wrap &
+			+sm
+				margin-bottom: 7px
 	&__footer
 		margin-top: 15px
 
 .map
-	height: 100vh
+	height: 100%
 	width: 100%
+	.gm-style-cc
+		display: none
 
 .route
 	width: 100%

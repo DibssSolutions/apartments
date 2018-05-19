@@ -146,6 +146,9 @@
 			border-radius: 5px
 			width: 182px
 			height: 111px
+			background-position: 50% 50%
+			background-repeat: no-repeat 
+			background-size: cover
 	&__description
 		overflow: auto
 		margin-bottom: 19px
@@ -157,6 +160,8 @@
 			height: 3em * 1.35
 			+f(15px, null, 1.35)
 			text-align: center
+		+sm
+			display: none
 		> .ps__rail-y
 			right: 0 !important
 	&__price

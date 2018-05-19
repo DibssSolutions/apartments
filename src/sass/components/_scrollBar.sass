@@ -117,4 +117,10 @@
 	.ps__thumb-x, 
 	.ps__thumb-y
 		&:before
-			background: rgba($black, 0.3)
+			transition: background-color .3s
+			background-color: rgba($black, 0)
+	&:hover
+		& > .ps__rail-x .ps__thumb-x, 
+		& > .ps__rail-y .ps__thumb-y
+			&:before
+				background-color: rgba($black, 0.3) !important

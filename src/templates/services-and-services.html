@@ -1,0 +1,63 @@
+---
+title: services-and-services
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<div class="services">
+		<div class="services__cover cover" style="background-image: url(img/services-bg.jpg)">
+			<div class="cover__content">
+				<p>Посуточная аренда лучших аппартаментов в Москва-Сити по версии International Property Awards </p>
+			</div>
+		</div>
+		<div class="services__wrap">
+			<div class="topic">
+				<h2 class="topic__title-lg title-lg">Услуги и Сервис</h2>
+				<p>Many people sign up for affiliate programs with the hopes of making some serious money.</p>
+			</div>
+			<div class="accordions">
+				{% for accordion in [
+					{
+						title: 'Обслуживание в номере',
+						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
+					},
+					{
+						title: 'Рестораны',
+						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
+					},
+					{
+						title: 'Паркинг',
+						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
+					},
+					{
+						title: 'Покупки',
+						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
+					},
+					{
+						title: 'Финансы',
+						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
+					},
+					{
+						title: 'Спорт и фитнес',
+						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
+					},
+					{
+						title: 'Развлечения и отдых',
+						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
+					}
+				] %}
+				<!-- begin accordion -->
+				<div class="accordion accordion_mod{% if loop.index == 1 %} is-open{% endif %} js-accordion">
+					<div class="accordion__topic js-accordion-trigger">{{ accordion.title }}</div>
+					<div class="accordion__wrap js-accordion-wrap">
+						<p>{{ accordion.text }}</p>
+					</div>
+				</div>
+				<!-- end accordion -->
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

@@ -5,6 +5,7 @@
 	width: 274px
 	height: 100vh
 	color: $white
+	overflow: hidden
 	background: $dark
 	box-shadow: 0 22px 31px 0 rgba($black,0.35)
 	font-family: $book
@@ -36,14 +37,16 @@
 			bottom: 100%
 			padding-top: 100px
 			height: 100vh
+			opacity: 0
 			background: $dark
 			transform: translate3d(0,0,0)
-			transition: transform 0.4s
+			transition: transform 0.4s, opacity .4s
 		+sm 
 			padding-top: 50px
 		&.is-open
 			+lg 
 				transform: translate3d(0,100%,0)
+				opacity: 1
 	&__content
 		+lg 
 			overflow: auto

@@ -76,8 +76,12 @@
       <div class="main js-scroll-wrap">
         <!-- begin location -->
         <div class="location">
-          <div class="location__wrap js-scroll-wrap">
-            <div class="location__hero">
+          <div class="location__map">
+            <div class="map js-map" data-center-lat="55.753678" data-center-lng="37.621103"></div>
+          </div>
+          <div class="location__wrap">
+            <div class="topic">
+              <h2 class="topic__title-lg title-lg">Расположение</h2>
               <form action="/">
                 <!-- begin directions -->
                 <div class="directions">
@@ -89,8 +93,9 @@
                         </svg>
                       </div>
                       <div class="directions__input input js-input">
+                        <input type="text" id="location" value="Аэропорт Шереметьево">
                         <label for="location" class="label">Откуда</label>
-                        <input type="text" id="location"> </div>
+                      </div>
                       <button class="directions__btn" type="button">
                         <svg class="icon icon-location">
                           <use xlink:href="img/sprite.svg#icon-location"></use>
@@ -104,8 +109,9 @@
                         </svg>
                       </div>
                       <div class="directions__input input js-input">
+                        <input type="text" id="where" value="1-й Красногвардейский пр-д, 21, Москва, 123317">
                         <label for="where" class="label">Куда</label>
-                        <input type="text" id="where"> </div>
+                      </div>
                     </div>
                     <button class="directions__rotate" type="button">
                       <svg class="icon icon-rotate">
@@ -115,12 +121,12 @@
                   </div>
                 </div>
                 <!-- end directions -->
-                <div class="location__footer">
+                <div class="topic__footer">
                   <button class="btn btn_blue btn_md" type="submit">Проложить маршрут</button>
                 </div>
               </form>
             </div>
-            <div class="location__accordions">
+            <div class="accordions">
               <!-- begin accordion -->
               <div class="accordion js-accordion">
                 <div class="accordion__topic js-accordion-trigger">Культурные объекты
@@ -367,9 +373,6 @@
               </div>
               <!-- end accordion -->
             </div>
-          </div>
-          <div class="location__map">
-            <div class="map js-map" data-center-lat="55.753678" data-center-lng="37.621103"></div>
           </div>
         </div>
         <!-- end location -->

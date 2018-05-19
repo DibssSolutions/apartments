@@ -18,7 +18,7 @@
       {% if not noHeader %}
         {% include 'partials/components/_header.html' %}
       {% endif %}
-      <div class="main js-scroll-wrap">
+      <div class="main{% if mainScroll !== false %} js-scroll-wrap{% endif %}">
         {% block content %}{% endblock %}
       </div>
     </div>
