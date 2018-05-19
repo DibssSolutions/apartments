@@ -7,7 +7,12 @@ const ANIMATED = 'is-animated';
 const DURATION = 400;
 const SCROLL_DURATION = 400;
 const watch = [];
-const hideScroll = container => winWidth(widthXS) && container.perfectScrollbar.destroy();
+const hideScroll = container => {
+  if (winWidth(widthXS) && container.perfectScrollbar) {
+    container.perfectScrollbar.destroy();
+    container.perfectScrollbar = null;
+  }
+};
 let activeItem = null;
 
 containers.each((index, container) => {
@@ -48,7 +53,7 @@ containers.each((index, container) => {
     content.slideUp(DURATION, () => {
       animation = false;
       TweenMax.set([slides, elements, content],{clearProps:'all'});
-      if (!winWidth(widthXS)) return;
+      if (!winWidth(widthXS) && scrollParentDOM.perfectScrollbar) return;
       scrollParentDOM.perfectScrollbar = new PerfectScrollbar(scrollParentDOM);
     });
   };
@@ -64,7 +69,7 @@ containers.each((index, container) => {
       scrollParent.addClass(HIDDEN);
       hideScroll(scrollParentDOM);
     } else {
-      scrollParentDOM.perfectScrollbar = new PerfectScrollbar(scrollParentDOM);
+      if (!scrollParentDOM.perfectScrollbar) scrollParentDOM.perfectScrollbar = new PerfectScrollbar(scrollParentDOM);
     };
   });
 
