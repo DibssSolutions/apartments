@@ -19,6 +19,7 @@ containers.each((index, container) => {
   const scrollParent = container.closest('.js-scroll-wrap');
   const scrollParentDOM = scrollParent.get(0);
   let active = false;
+  let animation = false;
 
   const show = new TimelineMax({ paused: true })
     .addLabel('start')
@@ -45,6 +46,7 @@ containers.each((index, container) => {
     new TimelineMax().to(content, 0.4, { opacity: 0 });
     scrollParent.removeClass(HIDDEN);
     content.slideUp(DURATION, () => {
+      animation = false;
       TweenMax.set([slides, elements, content],{clearProps:'all'});
       if (!winWidth(widthXS)) return;
       scrollParentDOM.perfectScrollbar = new PerfectScrollbar(scrollParentDOM);
@@ -68,7 +70,9 @@ containers.each((index, container) => {
 
   control.on('click', e => {
     e.preventDefault();
-    
+
+    if (animation) return;
+    animation = true;
     container
       .removeClass(ANIMATED)
       .toggleClass(ACTIVE);
@@ -76,7 +80,10 @@ containers.each((index, container) => {
     if (!active) {
       active = !active;
       show.play(0);
-      content.slideDown(DURATION, () => winWidth(widthXS) && scrollParent.addClass(HIDDEN) );
+      content.slideDown(DURATION, () => {
+        animation = false;
+        winWidth(widthXS) && scrollParent.addClass(HIDDEN);
+      });
 
 
       const scrollParentLeft = scrollParent.offset().left;
