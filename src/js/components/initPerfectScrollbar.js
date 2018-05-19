@@ -7,7 +7,8 @@ DOC.ready(() => {
   if (!containers) return;
   for (var i = 0; i <= containers.length - 1; i++) {
   	containers[i].perfectScrollbar = new PerfectScrollbar(containers[i], {
-      minScrollbarLength: 40
+      minScrollbarLength: 40,
+      useBothWheelAxes: true
     });
   }
 });
