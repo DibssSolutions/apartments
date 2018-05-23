@@ -50,6 +50,8 @@
 				overflow: auto
 			&__slider
 				overflow: hidden !important
+		.ps__rail-x
+			display: none !important
 	&__img
 		width: 100%
 		height: 100%
@@ -122,11 +124,16 @@
 		display: none
 		overflow: hidden
 		flex-grow: 1
-		padding: 18px 50px 20px
 		+xs
 			padding: 9px 19px 0
 		> .ps__rail-y
 			right: 5px !important
+	&__content-wrap
+		padding: 18px 50px 20px
+		overflow: hidden
+		height: 100%
+		+xs
+			padding: 9px 19px 0 
 	&__slider
 		overflow: visible !important
 		padding: 0 50px
