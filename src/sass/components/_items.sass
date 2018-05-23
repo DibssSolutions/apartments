@@ -36,9 +36,11 @@
 	&.is-active
 		.item 
 			&__img
-				height: 240px
+				height: calc(100% - 630px)
+				min-height: 240px
 				+xs
-					height: 155px
+					height: calc(100% - 260px)
+					min-height: 155px
 			&__container
 				animation: soar 3.5s ease-in-out forwards
 			&__control
