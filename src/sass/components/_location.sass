@@ -20,9 +20,10 @@
 			width: 100%
 	&__wrap
 		float: right
+		overflow: hidden
 		position: relative
 		z-index: 1
-		height: 100vh
+		min-height: 100vh
 		width: 600px
 		box-shadow: 0 22px 31px 0 rgba(0,0,0,0.35)
 		background-color: $wildSand
@@ -41,7 +42,7 @@
 				display: none
 		+lg
 			width: 400px
-			height: calc(100vh - 50px)  
+			min-height: calc(100vh - 50px)  
 		+sm
 			float: none
 			height: auto
