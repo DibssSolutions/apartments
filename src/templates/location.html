@@ -171,7 +171,7 @@ title: Location
 							<div class="route__col">{{ route.time }}</div>
 							<div class="route__col">{{ route.distance }}</div>
 							<div class="route__btn">
-								<button class="btn btn_blue btn_md" type="button"{% if loop.index !== 1 %}disabled{% endif %}>Маршрут</button>
+								<button class="btn btn_md{% if loop.index !== 1 %} btn_gray{% else %} btn_blue{% endif %}" type="button">Маршрут</button>
 							</div>
 						</div>
 						{% endfor %}
