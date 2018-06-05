@@ -5,11 +5,38 @@ title: services-and-services
 
 {% block content %}
 	
-	<div class="services">
-		<div class="services__cover cover" style="background-image: url(img/services-bg.jpg)">
-			<div class="cover__content">
-				<p>Посуточная аренда лучших аппартаментов в Москва-Сити по версии International Property Awards </p>
+	<div class="services" data-tabs>
+		<div class="services__cover" data-tabs-wrapper>
+			{% for item in range(0,7) %}
+			<div class="interiors js-interiors" data-tabs-container="tab-{{loop.index}}" style="position: absolute; background: #0e0a1c; top: 0; left: 0; right: 0; bottom: 0; display: block;">
+				<button class="interiors__arrow interiors__prev interiors__scroll-to js-interiors-scroll-to" data-direction="prev">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.2 23.5" style="width: 0.604em; height: 1em;" class="interiors__icon"><path fill="currentColor" d="M13.7 3.2l-8.5 8.6 8.5 8.6c.7.7.7 1.9 0 2.6-.7.7-1.9.7-2.6 0L0 11.7 11.1.5c.7-.7 1.9-.7 2.6 0 .7.8.7 1.9 0 2.7z"/></svg>
+				</button>
+				<button class="interiors__arrow interiors__next interiors__scroll-to js-interiors-scroll-to" data-direction="next">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.2 23.5" style="width: 0.604em; height: 1em;" class="interiors__icon"><path fill="currentColor" d="M.5.5c.7-.7 1.9-.7 2.6 0l11.1 11.2L3.1 22.9c-.7.7-1.9.7-2.6 0-.7-.7-.7-1.9 0-2.6L9 11.7.5 3.1C-.2 2.4-.2 1.3.5.5z"/></svg>
+				</button>
+				<div class="interiors__slider white-scrollbar js-interiors-slideshow">
+					{% for item in range(0,3) %}
+						<div class="interiors__slide" data-index="{{loop.index}}">
+							<div class="interiors__background cover" style="background-image: url(img/interiors.jpg);">
+								<div class="cover__content">
+									<p>Посуточная аренда лучших аппартаментов в Москва-Сити по версии International Property Awards </p>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="interiors__thumbnails js-scroll-wrap js-interiors-thumbnails">
+					<div class="interiors__thumbnails-in">
+						{% for item in range(0,3) %}
+							<div class="interiors__thumbnail" data-index="{{loop.index}}">
+								<div class="interiors__preview" style="background-image: url(img/interiors.jpg);"></div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
 			</div>
+			{% endfor %}
 		</div>
 		<div class="services__wrap">
 			<div class="topic">
@@ -19,37 +46,44 @@ title: services-and-services
 			<div class="accordions">
 				{% for accordion in [
 					{
+						tab: "tab-1",
 						title: 'Обслуживание в номере',
 						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
 					},
 					{
+						tab: "tab-2",
 						title: 'Рестораны',
 						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
 					},
 					{
+						tab: "tab-3",
 						title: 'Паркинг',
 						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
 					},
 					{
+						tab: "tab-4",
 						title: 'Покупки',
 						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
 					},
 					{
+						tab: "tab-5",
 						title: 'Финансы',
 						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
 					},
 					{
+						tab: "tab-6",
 						title: 'Спорт и фитнес',
 						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
 					},
 					{
+						tab: "tab-7",
 						title: 'Развлечения и отдых',
 						text: 'Many people sign up for affiliate programs with the hopes of making some serious money. I am convinced the only way to make money online is to have a consistent Advertising plan. '
 					}
 				] %}
 				<!-- begin accordion -->
 				<div class="accordion accordion_mod{% if loop.index == 1 %} is-open{% endif %} js-accordion">
-					<div class="accordion__topic js-accordion-trigger">{{ accordion.title }}</div>
+					<div class="accordion__topic js-accordion-trigger" data-tabs-control="{{ accordion.tab }}">{{ accordion.title }}</div>
 					<div class="accordion__wrap js-accordion-wrap">
 						<p>{{ accordion.text }}</p>
 					</div>

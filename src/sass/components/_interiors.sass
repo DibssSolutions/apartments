@@ -21,6 +21,9 @@
 			display: inline-block
 			vertical-align: top
 			width: 100vw
+		.services__cover &
+			+sm
+				height: 175px
 	&__background
 		position: absolute
 		top: 0
@@ -43,6 +46,9 @@
 			background-image: linear-gradient(-180deg, rgba(14,10,28,0.89) 0%, rgba(14,10,28,0.26) 21%, rgba(14,10,28,0.00) 60%, #0E0A1C 95%)
 			+sm 
 				background-image: linear-gradient(-180deg, rgba(14,10,28,0.00) 0%, rgba(14,10,28,0.00) 46%, rgba(14,10,28,0.73) 68%, #0E0A1C 95%)
+		&.cover
+			&:before
+				opacity: 0.6
 	&__content
 		position: relative
 		z-index: 10

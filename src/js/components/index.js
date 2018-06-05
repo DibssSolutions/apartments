@@ -5,3 +5,4 @@ import './interiors';
 import './accordeon';
 import './map';
 import './checkInput';
+import './tabs';
