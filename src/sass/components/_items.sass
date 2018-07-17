@@ -14,6 +14,34 @@
 	&__content
 		font-size: 0
 		white-space: nowrap
+		.slick-list,
+		.slick-track,
+		.slick-slide,
+		.slick-slide > div
+			height: 100%
+		.slick-dots
+			position: absolute
+			left: 0
+			width: 100%
+			bottom: 13px
+			font-size: 0
+			text-align: center
+			li
+				vertical-align: top
+				display: inline-block
+				&:not(:first-child)
+					margin-left: 8px
+				&.slick-active
+					button
+						background-color: $blue 
+			button
+				display: block
+				width: 12px
+				height: 12px
+				font-size: 0
+				border-radius: 50%
+				transition: background-color .3s
+				background-color: $white 
 	&__col
 		display: inline-block
 		vertical-align: top
