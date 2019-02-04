@@ -91,8 +91,10 @@ title: Apartments
 					</div>
 				</div>
 				<div class="apartment__right">
-					<div class="apartment__scheme">
-						<img src="./img/scheme.png" alt="img">
+					<div class="apartment__scheme js-scheme-slider">
+						{% for scheme in range(0,7) %}
+							<img src="./img/scheme.png" alt="img">
+						{% endfor %}
 					</div>
 				</div>
 			</div>

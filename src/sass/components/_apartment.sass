@@ -37,7 +37,7 @@
 			padding-right: 0
 	&__right
 		width: 262px
-		flex: 0 0 262px 
+		flex: 0 0 262px
 		+md
 			margin-top: 10px
 			width: 100%
@@ -93,12 +93,69 @@
 		&:not(:first-child)
 			margin-top: 5px
 	&__scheme
-		padding-left: 9px 
+		padding-left: 9px
+		margin: 0 -30px
+		position: relative
+		white-space: nowrap
+		overflow: hidden
+		opacity: 0
+		visibility: hidden
+		transition: opacity .3s, visibility .3s
 		+md
-			display: none
-		img
+			margin: 0
+			margin-top: 50px
+		+sm
+			max-width: 400px
+			margin: 50px auto
+		& img
 			max-width: 100%
 			display: block
+			padding: 0 30px
+			+sm
+				padding: 0
+		&.slick-initialized
+			white-space: normal
+			overflow: visible
+			opacity: 1
+			visibility: visible
+		.slick-prev
+			left: 12px
+		.slick-next
+			right: 5px
+		.slick-arrow
+			background-color: transparent
+			color: $white
+			opacity: 0.8
+			position: absolute
+			top: 50%
+			margin-top: -13px
+			transition: opacity .3s
+			z-index: 2
+			+hover
+				opacity: 1
+		.slick-dots
+			position: absolute
+			left: 0
+			width: 100%
+			bottom: -30px
+			font-size: 0
+			text-align: center
+			li
+				vertical-align: top
+				display: inline-block
+				&:not(:first-child)
+					margin-left: 8px
+				&.slick-active
+					button
+						background-color: $blue 
+			button
+				display: block
+				width: 12px
+				height: 12px
+				font-size: 0
+				border-radius: 50%
+				transition: background-color .3s
+				background-color: $white 
 	&__btn
 		+md
 			width: auto
