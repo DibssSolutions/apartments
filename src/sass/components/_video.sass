@@ -1,7 +1,32 @@
 .video
-    &__cover
-        position: fixed
+    min-height: 100%
+
+.interiors__slide
+    +hover
+        .video-fancy:before
+            transform: translate(-50%,-50%) scale(1.2)
+    .video-fancy
+        position: absolute
         top: 0
-        left: 274px
         right: 0
         bottom: 0
+        left: 0
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+        &:before
+            position: absolute
+            content: ""
+            top: 50%
+            left: 50%
+            -ms-transform: translate(-50%,-50%) scale(1)
+            transform: translate(-50%,-50%) scale(1)
+            width: 64px
+            height: 64px
+            z-index: 3
+            transition: transform .3s
+            background-image: url(../img/play.svg)
+            background-position: 0 0
+            background-size: cover
+            background-repeat: no-repeat
+            z-index: 1

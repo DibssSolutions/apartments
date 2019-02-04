@@ -8,3 +8,4 @@ import './map';
 import './checkInput';
 import './tabs';
 import './scheme';
+import './video';
