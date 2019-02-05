@@ -96,3 +96,21 @@
 			vertical-align: middle
 			+sm
 				font-size: 12px
+.btn-play
+	position: absolute
+	display: inline-block
+	top: 50%
+	left: 50%
+	transform: translate(-50%,-50%) scale(1)
+	width: 64px
+	height: 64px
+	background-color: rgba(0, 0, 0, 0.4)
+	color: $white
+	border-radius: 50%
+	font-size: 64px
+	line-height: 1
+	transition: transform .3s
+	&_sm
+		width: 24px
+		height: 24px
+		font-size: 24px

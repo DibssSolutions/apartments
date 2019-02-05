@@ -1,4 +1,4 @@
-import fancybox from 'fancybox/dist/js/jquery.fancybox.pack';
+import fancybox from '@fancyapps/fancybox';
 
 let video = $('.js-fancybox');
 

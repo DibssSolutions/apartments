@@ -67,6 +67,6 @@
     "webpack-glsl-loader": "^1.0.1"
   },
   "dependencies": {
-    "fancybox": "^3.0.1"
+    "@fancyapps/fancybox": "3.3.5"
   }
 }
