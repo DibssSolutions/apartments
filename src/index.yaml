@@ -17,3 +17,5 @@ PageList:
   ready: 100
 - file: services-and-services.html
   ready: 100
+- file: video.html
+  ready: 50

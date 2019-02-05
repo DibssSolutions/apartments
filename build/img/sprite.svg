@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg"><symbol id="icon-arrow-left" viewBox="0 0 18 15.11">
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg"><defs>
+        <style>
+            .cls-1{stroke:#000;opacity:.4}.cls-1,.cls-3{stroke-miterlimit:10}.cls-2{fill:#fff}.cls-3{fill:none;stroke:#fff;stroke-linecap:round}
+        </style>
+    </defs><symbol id="icon-arrow-left" viewBox="0 0 18 15.11">
     <title>
         arrow-left
     </title>
@@ -28,6 +32,12 @@
         Combined Shape
     </title>
     <path d="M5 0c2.757 0 5 2.228 5 4.968 0 1.127-.39 2.23-1.098 3.107-.87 1.078-3.609 3.65-3.725 3.758L5 12l-.177-.167c-.117-.109-2.855-2.68-3.725-3.758A4.961 4.961 0 0 1 0 4.968C0 2.228 2.242 0 5 0zm0 2.933c-1.117 0-2.027.897-2.027 2s.909 2 2.027 2 2.027-.897 2.027-2-.909-2-2.027-2z" fill-rule="evenodd"/>
+</symbol><symbol id="icon-play" viewBox="0 0 697.43 697.43">
+    
+    <title>
+        play
+    </title>
+    <path class="cls-3" d="M908.46 710.6l275.18-157.24a23.37 23.37 0 0 0 0-40.58L908.46 355.55a23.38 23.38 0 0 0-35 20.29V690.3a23.38 23.38 0 0 0 35 20.3z" transform="translate(-642.98 -179.6)"/>
 </symbol><symbol id="icon-rotate" viewBox="0 0 15 17">
     <title>
         Page 1

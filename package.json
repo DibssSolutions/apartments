@@ -65,5 +65,8 @@
     "webpack": "^4.6.0",
     "webpack-bundle-analyzer": "^2.11.1",
     "webpack-glsl-loader": "^1.0.1"
+  },
+  "dependencies": {
+    "@fancyapps/fancybox": "3.3.5"
   }
 }
